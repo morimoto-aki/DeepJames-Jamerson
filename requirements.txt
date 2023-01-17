@@ -1,0 +1,11 @@
+autopep8==1.6.0
+flake8==4.0.1
+mccabe==0.6.1
+pylint==2.12.2
+mypy==0.910
+numpy==1.19.4
+matplotlib==3.5.0
+music21==6.7.1
+pandas==1.1.2
+tensorflow==2.7.4
+tensorflow-gpu==2.7.4
