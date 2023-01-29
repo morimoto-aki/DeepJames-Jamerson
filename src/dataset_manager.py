@@ -10,6 +10,7 @@ class DatasetManager():
         self.data_list_measure = []
         self.data_one_hot = []
         self.data_note = []
+        self.id_list = []
         self.id = 0
 
     def set_dataset(self, datasets, sequence):
@@ -18,6 +19,7 @@ class DatasetManager():
 
         self.set_data_dic(self.data_list)
         self.divid_measure(self.data_list)
+        self.set_id(self.data_list)
         self.trans_note(self.data_one_hot)
 
     def set_data_dic(self, dataset):
@@ -50,6 +52,10 @@ class DatasetManager():
         for index, data in enumerate(dataset):
             self.data_one_hot.append(np.eye(len(self.data_dic) + 1)[data])
 
+    def set_id(self, dataset):
+        for data in dataset:
+            self.id_list.append(self.data_dic[data])
+
     def get_data_dic(self):
         return self.data_dic
 
@@ -61,3 +67,6 @@ class DatasetManager():
 
     def get_note_one(self):
         return self.data_note
+
+    def get_id_list(self):
+        return self.id_list

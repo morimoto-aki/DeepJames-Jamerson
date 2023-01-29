@@ -1,6 +1,9 @@
 FROM  nvidia/cuda:11.4.0-cudnn8-devel-ubuntu20.04
 ENV NOTO_DIR /usr/share/fonts/opentype/notosans
 
+ENV TZ=Asia/Tokyo
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 RUN apt update \
     && apt install -y \
     wget \
@@ -29,7 +32,8 @@ RUN apt update \
     xz-utils \
     sudo \
     python3 \
-    python3-pip
+    python3-pip \
+    graphviz
 
 RUN mkdir -p ${NOTO_DIR} &&\
   wget -q https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJKjp-hinted.zip -O noto.zip &&\

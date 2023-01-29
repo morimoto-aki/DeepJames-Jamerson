@@ -9,3 +9,5 @@ music21==6.7.1
 pandas==1.1.2
 tensorflow==2.7.4
 tensorflow-gpu==2.7.4
+pydot==1.4.2
+graphviz==0.20.1
