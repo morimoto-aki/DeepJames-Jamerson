@@ -52,7 +52,7 @@ def lstm(x_train, y_train, x_test, label):
     # モデルを作成する
     model.compile(optimizer='adam', loss='mean_squared_error')
 
-    filepath = "weights.hdf5"
+    filepath = "src/outputweights.hdf5"
     checkpoint = ModelCheckpoint(
         filepath,
         monitor='loss',

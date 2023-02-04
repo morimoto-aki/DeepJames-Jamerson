@@ -23,14 +23,14 @@ def data_manager(chord_name, quarter_length, note_name, tie, ghost_note):
         for i in range(int(time)):
             if i == 0:
                 if tie == 2:
-                    note_info = [chord_name, "+", notes_info[-1][2] % 16 + 1, tie, ghost_note]
+                    note_info = [chord_name, "+", int(notes_info[-1][2] % 16 + 1), tie, ghost_note]
                 else:
                     if ghost_note == True:
-                        note_info = [chord_name, "x", notes_info[-1][2] % 16 + 1, tie, ghost_note]
+                        note_info = [chord_name, "x", int(notes_info[-1][2] % 16 + 1), tie, ghost_note]
                     else:
-                        note_info = [chord_name, note_name, notes_info[-1][2] % 16 + 1, tie, ghost_note]
+                        note_info = [chord_name, note_name, int(notes_info[-1][2] % 16 + 1), tie, ghost_note]
             else:
-                note_info = [chord_name, "_", notes_info[-1][2] + 1, 0, 0]
+                note_info = [chord_name, "_", int(notes_info[-1][2] + 1), 0, 0]
 
             notes_info.append(note_info)
 
@@ -38,14 +38,14 @@ def data_manager(chord_name, quarter_length, note_name, tie, ghost_note):
         for i in range(int(time)):
             if i == 0:
                 if tie == 2:
-                    note_info = [chord_name, "+", i + 1, tie, ghost_note]
+                    note_info = [chord_name, "+", int(i + 1), tie, ghost_note]
                 else:
                     if ghost_note == True:
-                        note_info = [chord_name, "x", i + 1, tie, ghost_note]
+                        note_info = [chord_name, "x", int(i + 1), tie, ghost_note]
                     else:
-                        note_info = [chord_name, note_name, i + 1, tie, ghost_note]
+                        note_info = [chord_name, note_name, int(i + 1), tie, ghost_note]
             else:
-                note_info = [chord_name, "_", i + 1, 0, 0]
+                note_info = [chord_name, "_", int(i + 1), 0, 0]
 
             notes_info.append(note_info)
 

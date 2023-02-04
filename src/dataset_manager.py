@@ -70,3 +70,6 @@ class DatasetManager():
 
     def get_id_list(self):
         return self.id_list
+
+    def get_data_list(self):
+        return self.data_list
